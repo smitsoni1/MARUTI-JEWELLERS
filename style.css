@@ -1,3 +1,6 @@
+/* ==============================
+   RESET & GLOBAL
+============================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +14,9 @@ body {
   line-height: 1.5;
 }
 
-/* LOGO + SEARCH */
+/* ==============================
+   LOGO + SEARCH
+============================== */
 .logo-search-container {
   display: flex;
   align-items: center;
@@ -68,7 +73,9 @@ body {
   background-color: #e0e0e0;
 }
 
-/* ================= NAVBAR ================= */
+/* ==============================
+   NAVBAR
+============================== */
 .sub-navbar {
   display: flex;
   justify-content: center;
@@ -105,7 +112,9 @@ body {
   right: 20px;
 }
 
-/* ================ HERO ================ */
+/* ==============================
+   HERO
+============================== */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -148,7 +157,9 @@ body {
   margin-top: 6px;
 }
 
-/* ================ SECTIONS ================ */
+/* ==============================
+   SECTIONS
+============================== */
 .section {
   padding: 40px 18px;
 }
@@ -163,17 +174,16 @@ body {
   margin-bottom: 18px;
 }
 
-/* ================ BIG CARD STYLE ================ */
+/* ==============================
+   BIG CARD (Box Wrapper)
+============================== */
 .big-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
   background: #fff;
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin: 0 auto 20px;
-  max-width: 900px;
+  margin: 0 auto 30px;
+  max-width: 1000px;
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
@@ -182,36 +192,71 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.big-card .thumb {
-  flex: 0 0 240px;   /* 🟢 bigger image box */
-  height: 200px;
-  overflow: hidden;
-  border-radius: 10px;
+.big-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #500a0a;
 }
 
-.big-card .thumb img {
+/* ==============================
+   SMALL CARDS INSIDE BIG CARD
+============================== */
+.small-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 🔥 size vadharyu */
+  gap: 20px;
   width: 100%;
-  height: 100%;
+}
+
+.small-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  min-height: 220px; /* 🔥 card nu size vadharyu */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* text hamesha niche j rahe */
+}
+
+.small-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* image section */
+.small-card img {
+  width: 100%;
+  height: 250px; /* 🔥 size vadharyu */
   object-fit: cover;
+  display: block;
 }
 
-.big-card .card-meta {
-  flex: 1;
+/* text/meta section */
+.small-card .card-meta {
+  padding: 12px;
+   background: #fff8e1;  
 }
 
-.big-card .card-meta .title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.big-card .card-meta .wt {
-  font-size: 1.1rem;
-  color: #555;
+.small-card .title {
+  font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-/* ================ FOOTER ================ */
+.small-card .wt {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* ==============================
+   FOOTER
+============================== */
 .footer-upper {
   background-color: #500a0a;
   color: white;
@@ -268,7 +313,9 @@ footer {
   margin-top: 20px;
 }
 
-/* ================ BACK TO TOP ================ */
+/* ==============================
+   BACK TO TOP
+============================== */
 #backToTop {
   position: fixed;
   left: 20px;
@@ -290,11 +337,13 @@ footer {
   color: black;
 }
 
-/* ================= MEDIA QUERIES ================= */
+/* ==============================
+   RESPONSIVE
+============================== */
 
 /* 📱 MOBILE */
 @media screen and (max-width: 768px) {
- .logo-search-container {
+  .logo-search-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -346,17 +395,8 @@ footer {
     min-width: 100%;
   }
 
-  .big-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  .big-card .thumb {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 220px;
-  }
-  .big-card .card-meta {
-    margin-top: 12px;
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
