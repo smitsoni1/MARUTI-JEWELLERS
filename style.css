@@ -397,6 +397,7 @@ footer {
 
   .small-cards {
      grid-template-columns: 1fr; /* એક જ column mobile પર */
+      gap: 15px;
   }
 }
 
