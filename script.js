@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const goldEl = document.getElementById("goldRate");
   const updatedEl = document.getElementById("rateUpdated");
 
-  const manualRate = 99000; // Today's 22K / 10 gm rate
+  const manualRate = 102500; // Today's 22K / 10 gm rate
   goldEl.textContent = `₹ ${manualRate}`;
   goldEl.dataset.rate = manualRate;
 
