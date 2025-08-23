@@ -396,7 +396,7 @@ footer {
   }
 
   .small-cards {
-    grid-template-columns: repeat(2, 1fr);
+     grid-template-columns: 1fr; /* એક જ column mobile પર */
   }
 }
 
@@ -413,5 +413,10 @@ footer {
   .sub-navbar {
     gap: 20px;
     font-size: 17px;
+  }
+  
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
+    gap: 20px;
   }
 }
