@@ -1,0 +1,346 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', 'Helvetica Neue', Verdana, Arial, sans-serif;
+
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+
+/* LOGO + SEARCH */
+.logo-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.shop-logo {
+  width: 120px;
+  height: auto;
+  margin-top: 50px;
+}
+
+/* SEARCH BOX */
+.search-box {
+  position: absolute;
+  right: 50px;
+  display: flex;
+  border: 2px solid #500a0a;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 45px;
+}
+
+.search-box input {
+  padding: 0 15px;
+  border: none;
+  outline: none;
+  width: 300px;
+  font-size: 16px;
+  height: 100%;
+}
+
+.search-box button {
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  width: 50px;
+  height: 100%;
+}
+
+.search-box button:hover {
+  background-color: #e0e0e0;
+}
+
+/* ================= NAVBAR ================= */
+.sub-navbar {
+  display: flex;
+  justify-content: center;   /* LINKS center માં */
+  align-items: center;
+  background-color: #500a0a;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 999;
+  font-family: PT Sans, Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.sub-navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.sub-navbar a.active,
+.sub-navbar a:hover {
+  color: #ff9800;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #414b56;
+}
+
+/* Main container */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.office-info {
+    flex: 1 1 45%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.office-info h3 {
+    margin-bottom: 15px;
+}
+
+.office-info p {
+    margin: 20px 0;
+}
+
+/* Map */
+.map {
+    flex: 1 1 50%;
+    margin-top: 10px;
+}
+
+
+/* Links (tel, mailto, WhatsApp) */
+.office-info a {
+    text-decoration: none; /* underline remove */
+    color: #333;           /* normal text color */
+    transition: color 0.3s; /* smooth color change on hover */
+}
+
+.office-info a:hover {
+    color: #cfa801;       /* hover color (gold like theme) */
+}
+
+/* Optional: active / click color */
+.office-info a:active {
+    color: #ff6600;       /* color when clicking */
+}
+
+/* footer upper */
+
+.footer-upper {
+  background-color: #500a0a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.subscribe-section p {
+  margin-bottom: 10px;
+}
+
+.subscribe-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.subscribe-box input {
+  padding: 8px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+}
+
+.subscribe-box button {
+  padding: 8px 15px;
+  background-color: black;
+  color: white;
+  border-bottom: 3px solid #cfa801;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.social-icons a {
+  margin: 0 5px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Footer */
+
+footer{
+  padding:12px;
+  text-align:center;
+  background:#333;
+  color:#fff;
+  margin-top:20px
+}
+
+
+#backToTop {
+  position: fixed;
+  left: 20px;      /* Left side */
+  bottom: 100px;   /* Above footer */
+  z-index: 100;    /* On top of other elements */
+  background-color:#4a1111 ; /* Maroon color like screenshot */
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  display:none; /* Hide initially */
+  transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+  background-color: whitesmoke;
+  color: black ;
+}
+
+
+/* ========================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ========================= */
+
+/* MOBILE - Up to 768px */
+@media screen and (max-width: 768px) {
+  .logo-search-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box {
+    position: relative;
+    right: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #500a0a;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .office-info, .map {
+    flex: 1 1 100%;
+  }
+  /* MOBILE - Up to 768px */
+  .office-info p, 
+  .office-info a {
+    font-size: 12px;   /* 👈 small font for mobile */
+    line-height: 1.4;  /* થોડું gap રાખવા માટે */
+    white-space: normal; /* 👈 allow wrap */
+  }
+
+
+}
+
+/* TABLET - 769px to 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .logo-search-container { justify-content: space-between; padding: 0 20px; }
+  .search-box { width: 220px; height: 40px; }
+
+  .sub-navbar { gap: 20px; }
+  .nav-links { gap: 20px; }
+
+  .contact-container {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .office-info, .map {
+    flex: 1 1 48%;
+  }
+}
+
+/* DESKTOP - 1025px+ */
+@media screen and (min-width: 1025px) {
+  .search-box { width: 300px; height: 45px; }
+  .nav-links { gap: 25px; }
+}

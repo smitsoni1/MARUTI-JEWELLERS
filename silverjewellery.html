@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silver Jewellery - Maruti Jewellers</title>
+  <link rel="stylesheet" href="goldjewellery.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER + LOGO + SEARCH -->
+  <header>
+    <div class="logo-search-container">
+      <div class="logo-container">
+        <img src="images/shop-logo.jpg" alt="Shop Logo" class="shop-logo">
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search products...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="sub-navbar">
+      <div class="hamburger"><i class="fas fa-bars"></i></div>
+      <div class="nav-links">
+        <a href="allproducts.html">ALL PRODUCTS</a>
+        <a href="categories.html">CATEGORIES</a>
+        <a href="goldcoin.html">GOLD COIN</a>
+        <a href="goldjewellery.html">GOLD JEWELLERY</a>
+        <a href="silverjewellery.html" class="active">SILVER JEWELLERY</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO / PAGE HEADING -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Silver Jewellery Collection</h1>
+      <p>Elegant Silver Jewellery Pieces</p>
+    </div>
+  </section>
+
+  <!-- FILTER DROPDOWNS -->
+  <section class="filters">
+    <select id="categoryFilter">
+      <option value="">Categories</option>
+      <option value="necklace">Necklace</option>
+      <option value="ring">Ring</option>
+      <option value="earrings">Earrings</option>
+      <option value="bracelet">Bracelet</option>
+      <option value="pendant">Pendant</option>
+      <option value="bangles">Bangles</option>
+      <option value="chain">Chain</option>
+    </select>
+
+    <select id="weightFilter">
+      <option value="">Weight</option>
+      <option value="1-5">1-5 gm</option>
+      <option value="5-10">5-10 gm</option>
+      <option value="10-20">10-20 gm</option>
+      <option value="20+">20+ gm</option>
+    </select>
+  </section>
+
+  <!-- SILVER JEWELLERY GRID -->
+  <section class="section">
+    <div class="grid">
+      <!-- Example Silver Products -->
+      <div class="card">
+        <div class="thumb">
+          <img src="images/silver1.jpg" alt="Silver Necklace 1">
+          <button class="wishlist"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="card-meta">
+          <div class="title">Silver Necklace 101</div>
+          <div class="wt">Wt : 15.50 gram</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <img src="images/silver2.jpg" alt="Silver Ring 1">
+          <button class="wishlist"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="card-meta">
+          <div class="title">Silver Ring 202</div>
+          <div class="wt">Wt : 3.25 gram</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">
+          <img src="images/silver3.jpg" alt="Silver Earrings 1">
+          <button class="wishlist"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="card-meta">
+          <div class="title">Silver Earrings 303</div>
+          <div class="wt">Wt : 5.75 gram</div>
+          <button class="add-cart">ADD TO CART</button>
+        </div>
+      </div>
+
+      <!-- Add more silver jewellery cards as needed -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer-upper">
+    <div class="subscribe-section">
+      <p>Thank You For Visiting Our Website.</p>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Subscribe for our newsletter" />
+        <button>SUBSCRIBE</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-links">
+    <div><a href="#">About Us</a></div>
+    <div><a href="contact_us.html">Contact-Us</a></div>
+    <div><a href="#">Wishlist</a></div>
+    <div><a href="#">Privacy-Policy</a></div>
+    <div><a href="#">Terms and Conditions</a></div>
+    <div><a href="#">Shipping Policy</a></div>
+    <div><a href="#">Cancellation and Refund</a></div>
+    <div><a href="#">Saving Scheme Terms and Conditions</a></div>
+  </section>
+
+  <footer>
+    <span id="year"></span> © Maruti Jewellers Copyright. All Rights Reserved.
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Top">↑</button>
+
+  <!-- SCRIPT -->
+  <script src="silverjewellery.js"></script>
+</body>
+</html>
