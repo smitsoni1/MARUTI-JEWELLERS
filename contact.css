@@ -34,6 +34,7 @@ body {
   width: 120px;
   height: auto;
   margin-top: 50px;
+  border-radius: 50%;
 }
 
 /* SEARCH BOX */
@@ -263,26 +264,56 @@ footer{
 /* ========================= */
 /* 📱 RESPONSIVE DESIGN */
 /* ========================= */
+@media screen and (max-width: 1024px) {
+  .logo-search-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+   .search-box {
+    position: relative;
+    right: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .search-box input {
+    width: 100%;
+    text-align: center;
+  }
+
+}
 
 /* MOBILE - Up to 768px */
 @media screen and (max-width: 768px) {
   .logo-search-container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
-  .search-box {
+ .search-box {
     position: relative;
     right: auto;
     margin-top: 10px;
     width: 90%;
     height: 40px;
+    display: flex;
+    justify-content: center;
   }
+
 
   .search-box input {
     width: 100%;
+    text-align: center;
   }
-
+  .sub-navbar {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -298,7 +329,11 @@ footer{
   .nav-links.show {
     display: flex;
   }
-
+  .nav-links a {
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
   .hamburger {
     display: block;
   }
@@ -318,17 +353,30 @@ footer{
     white-space: normal; /* 👈 allow wrap */
   }
 
+.footer-links {
+    flex-direction: column; /* column layout */
+    gap: 10px; /* gap થોડું ઓછું */
+    align-items: center; /* center alignment */
+  }
 
+  .footer-links a {
+    text-align: center; /* link text center */
+    width: 100%; /* optional: full width link */
+  }
 }
 
 /* TABLET - 769px to 1024px */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .logo-search-container { justify-content: space-between; padding: 0 20px; }
-  .search-box { width: 220px; height: 40px; }
-
-  .sub-navbar { gap: 20px; }
-  .nav-links { gap: 20px; }
-
+    .logo-search-container {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+ 
+  .sub-navbar {
+    gap: 20px;
+    font-size: 17px;
+  }
+  
   .contact-container {
     flex-direction: row;
     gap: 15px;
@@ -341,6 +389,11 @@ footer{
 
 /* DESKTOP - 1025px+ */
 @media screen and (min-width: 1025px) {
-  .search-box { width: 300px; height: 45px; }
-  .nav-links { gap: 25px; }
+  .search-box { 
+    width: 300px; 
+    height: 45px; 
+  }
+  .nav-links {
+     gap: 25px; 
+    }
 }
