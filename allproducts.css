@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:  'PT Sans', 'Helvetica Neue', Verdana, Arial, sans-serif;
+  font-family: 'PT Sans', 'Helvetica Neue', Verdana, Arial, sans-serif;
 }
 
 body {
@@ -129,35 +129,49 @@ body {
   color: #555;
 }
 
-/* ========== GRID & CARDS ========== */
-.grid {
+/* ========== BIG CARD & SMALL CARDS ========== */
+.big-card {
+  max-width: 1200px;
+  margin: 40px auto; /* ઉપર-નીચે 40px space */
+  padding: 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+/*.big-card h2 {
+  color: #500a0a;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+} */
+
+.small-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 10px;
 }
 
-.card {
-  background: #fff;
+.small-card {
+  background: #fafafa;
   border-radius: 10px;
   border: 1px solid #eee;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
   overflow: hidden;
 }
 
-.card:hover {
+.small-card:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   border-color: #ead1a6;
 }
 
 .thumb {
-  height: 150px;
+  height: 200px;
   background: #f2f2f2;
   display: flex;
   align-items: center;
@@ -173,6 +187,7 @@ body {
 
 .card-meta {
   padding: 10px;
+  background: #fff8e1; 
 }
 
 .card-meta .title {
@@ -194,11 +209,9 @@ body {
   text-align: center;
 }
 
-
 .subscribe-section p {
   margin-bottom: 10px;
 }
-
 
 .subscribe-box {
   display: flex;
@@ -245,12 +258,11 @@ footer {
   margin-top: 20px;
 }
 
-
 /* ========== BACK TO TOP ========== */
 #backToTop {
   position: fixed;
-  right: 20px;
-  bottom: 100px;
+  left: 20px;    /* right: 20px બદલીને left: 20px */
+  bottom: 100px; /* નીચે થી અંતર */
   z-index: 100;
   background-color: #4a1111;
   color: white;
@@ -269,10 +281,13 @@ footer {
   color: black;
 }
 
+
 /* ========== RESPONSIVE ========== */
 @media screen and (max-width: 768px) {
   .logo-search-container {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .search-box {
@@ -280,11 +295,19 @@ footer {
     right: auto;
     width: 90%;
     margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
   }
 
   .search-box input {
     width: 100%;
     text-align: center;
+  }
+
+    .sub-navbar {
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .nav-links {
@@ -309,8 +332,46 @@ footer {
     display: block;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  .small-cards {
+    grid-template-columns: 1fr; /* mobile: 1 column */
     gap: 12px;
+  }
+
+    .footer-links {
+    flex-direction: column; /* column layout */
+    gap: 10px; /* gap થોડું ઓછું */
+    align-items: center; /* center alignment */
+  }
+
+  .footer-links a {
+    text-align: center; /* link text center */
+    width: 100%; /* optional: full width link */
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+   .logo-search-container {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .search-box {
+    width: 200px;
+    height: 40px;
+  }
+  .sub-navbar {
+    gap: 20px;
+    font-size: 17px;
+  }
+  
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .small-cards {
+    grid-template-columns: repeat(3, 1fr); /* desktop: 3 columns */
+    gap: 16px;
   }
 }

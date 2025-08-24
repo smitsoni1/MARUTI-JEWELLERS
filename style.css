@@ -399,6 +399,17 @@ footer {
      grid-template-columns: 1fr; /* એક જ column mobile પર */
       gap: 15px;
   }
+
+   .footer-links {
+    flex-direction: column; /* column layout */
+    gap: 10px; /* gap થોડું ઓછું */
+    align-items: center; /* center alignment */
+  }
+
+  .footer-links a {
+    text-align: center; /* link text center */
+    width: 100%; /* optional: full width link */
+  }
 }
 
 /* 💻 TABLET */
