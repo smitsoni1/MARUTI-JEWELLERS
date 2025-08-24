@@ -410,6 +410,22 @@ footer {
     flex: 1 1 45%;
   }
 
+
+   .subscribe-box {
+    flex-wrap: nowrap; /* nowrap to keep in one line */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .subscribe-box input {
+    width: 70%; /* input width adjust */
+  }
+
+  .subscribe-box button {
+    width: auto; /* auto width for button */
+    padding: 8px 12px;
+  }
+  
     .footer-links {
     flex-direction: column; /* column layout */
     gap: 10px; /* gap થોડું ઓછું */
