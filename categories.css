@@ -425,7 +425,7 @@ footer {
     width: auto; /* auto width for button */
     padding: 8px 12px;
   }
-  
+
     .footer-links {
     flex-direction: column; /* column layout */
     gap: 10px; /* gap થોડું ઓછું */
@@ -452,7 +452,6 @@ footer {
     gap: 20px;
     font-size: 17px;
   }
-  
   .small-cards {
     grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
     gap: 20px;
