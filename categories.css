@@ -186,9 +186,10 @@ body {
 .category-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: darkslategray;
   margin-bottom: 15px;
   text-align: left;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.6); /* subtle shadow */
 }
 
 /* PRODUCTS GRID INSIDE CATEGORY */
@@ -201,7 +202,8 @@ body {
 
 /* CARD */
 .card {
-  flex: 0 0 180px;
+  flex: 0 0 250px;
+   min-height: 280px; /* card height વધારી */
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -218,9 +220,13 @@ body {
 }
 
 .thumb {
-  width: 100%;
-  height: 180px;
+   width: 100%;
+  height: 250px; /* image height વધારી */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
 }
 
 .thumb img {
@@ -231,17 +237,20 @@ body {
 }
 
 .card-meta {
-  padding: 10px 5px;
-  background: #fff;
+  padding: 8px 10px; /* padding થોડું ઓછી */
+  background: #fff8e1;
   flex-grow: 1;
 }
 
 .card-meta .title {
   font-weight: 600;
   color: #333;
-  font-size: 1rem;
-  word-wrap: break-word;
-  white-space: normal;
+  font-size: 1rem;   /* थोड़ा smaller font */
+  margin-bottom: 4px;   /* margin-bottom ઓછી કરી */
+  line-height: 1.2;     /* tight line height */
+  max-height: 2.4em;    /* બે line max, overflow hidden */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ==============================
@@ -341,18 +350,27 @@ footer {
 @media screen and (max-width: 768px) {
   .logo-search-container {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  .search-box {
+   .search-box {
     position: relative;
     right: auto;
     margin-top: 10px;
     width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
   }
-
   .search-box input {
     width: 100%;
     text-align: center;
+  }
+
+    .sub-navbar {
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .nav-links {
@@ -392,7 +410,40 @@ footer {
   .card {
     flex: 1 1 45%;
   }
+
+    .footer-links {
+    flex-direction: column; /* column layout */
+    gap: 10px; /* gap થોડું ઓછું */
+    align-items: center; /* center alignment */
+  }
+
+  .footer-links a {
+    text-align: center; /* link text center */
+    width: 100%; /* optional: full width link */
+  }
 }
+
+/* 💻 TABLET */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .logo-search-container {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .search-box {
+    width: 200px;
+    height: 40px;
+  }
+  .sub-navbar {
+    gap: 20px;
+    font-size: 17px;
+  }
+  
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
+    gap: 20px;
+  }
+}
+
 
 @media screen and (max-width: 480px) {
   .products-grid {
