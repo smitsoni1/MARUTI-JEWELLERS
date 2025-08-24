@@ -35,6 +35,7 @@ body {
   width: 120px; /* LOGO WIDTH */
   height: auto;
   margin-top: 30px;
+    border-radius: 50%;
 }
 
 .search-box {

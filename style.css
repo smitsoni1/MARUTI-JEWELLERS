@@ -34,7 +34,8 @@ body {
 .shop-logo {
   width: 120px;
   height: auto;
-  margin-top: 50px;
+  margin-top: 30px;
+    border-radius: 50%;
 }
 
 /* SEARCH BOX */
