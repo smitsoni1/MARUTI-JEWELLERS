@@ -338,13 +338,10 @@ footer {
 }
 
 /* ==============================
-   MEDIA QUERIES
+   RESPONSIVE
 ============================== */
-@media screen and (max-width: 1024px) {
-  .products-grid {
-    justify-content: center;
-  }
 
+@media screen and (max-width: 1024px) {
   .logo-search-container {
     flex-direction: column;
     align-items: center;
@@ -366,33 +363,33 @@ footer {
   }
 
 }
-
+/* Mobile */
 @media screen and (max-width: 768px) {
   .logo-search-container {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+     justify-content: center;
   }
 
-   .search-box {
+  .search-box {
     position: relative;
     right: auto;
     margin-top: 10px;
     width: 90%;
     height: 40px;
-    display: flex;
+     display: flex;
     justify-content: center;
   }
+
   .search-box input {
     width: 100%;
     text-align: center;
   }
 
-    .sub-navbar {
+   .sub-navbar {
     justify-content: space-between;
     flex-wrap: wrap;
   }
-
   .nav-links {
     display: none;
     flex-direction: column;
@@ -415,39 +412,13 @@ footer {
     display: block;
   }
 
-  .hero-left h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-left p {
-    font-size: 1rem;
-  }
-
   .products-grid {
-    justify-content: center;
+    grid-template-columns: 1fr; /* mobile: 1 card per row */
+    gap: 15px;
   }
 
-  .card {
-    flex: 1 1 45%;
-  }
-
-
-   .subscribe-box {
-    flex-wrap: nowrap; /* nowrap to keep in one line */
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .subscribe-box input {
-    width: 70%; /* input width adjust */
-  }
-
-  .subscribe-box button {
-    width: auto; /* auto width for button */
-    padding: 8px 12px;
-  }
-
-    .footer-links {
+  
+   .footer-links {
     flex-direction: column; /* column layout */
     gap: 10px; /* gap થોડું ઓછું */
     align-items: center; /* center alignment */
@@ -459,30 +430,42 @@ footer {
   }
 }
 
-/* 💻 TABLET */
+/* Tablet */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .logo-search-container {
+  
+ .logo-search-container {
     justify-content: space-between;
     padding: 0 20px;
   }
-
+ 
   .sub-navbar {
     gap: 20px;
     font-size: 17px;
-  }
-  .small-cards {
-    grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
+  }  
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* tablet: 2 cards per row */
     gap: 20px;
   }
 }
 
+/* Small Tablet / iPad Mini */
+@media screen and (max-width: 1025px) and (min-width: 767px) {
+   .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 15px; /* cards વચ્ચે spacing */
+    justify-content: center; /* cards horizontally center align */
+  }
+}
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .products-grid {
-    justify-content: center;
+    justify-content: center; /* cards row માં center align */
   }
 
   .card {
-    flex: 1 1 90%;
+    flex: 0 0 90%; /* card width adjust */
+    margin: 0 auto; /* extra safety center */
   }
 }
