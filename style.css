@@ -340,6 +340,32 @@ footer {
 /* ==============================
    RESPONSIVE
 ============================== */
+@media screen and (max-width: 1024px) {
+  .big-card {
+    justify-content: center;
+  }
+
+  .logo-search-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+   .search-box {
+    position: relative;
+    right: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .search-box input {
+    width: 100%;
+    text-align: center;
+  }
+
+}
 
 /* 📱 MOBILE */
 @media screen and (max-width: 768px) {
@@ -363,7 +389,6 @@ footer {
     width: 100%;
     text-align: center;
   }
-
   .sub-navbar {
     justify-content: space-between;
     flex-wrap: wrap;
@@ -400,6 +425,8 @@ footer {
       gap: 15px;
   }
 
+
+
    .footer-links {
     flex-direction: column; /* column layout */
     gap: 10px; /* gap થોડું ઓછું */
@@ -418,10 +445,7 @@ footer {
     justify-content: space-between;
     padding: 0 20px;
   }
-  .search-box {
-    width: 200px;
-    height: 40px;
-  }
+ 
   .sub-navbar {
     gap: 20px;
     font-size: 17px;
@@ -430,5 +454,24 @@ footer {
   .small-cards {
     grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
     gap: 20px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .products-grid {
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 90%;
+  }
+}  
+
+/* MOBILE & SMALL TABLET FIX (iPad Mini, small tablets) */
+@media screen and (max-width: 1025px) and (min-width: 767px) {
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row like tablet */
+    gap: 15px;
   }
 }
