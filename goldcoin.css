@@ -120,35 +120,50 @@ body {
   margin-bottom: 18px;
 }
 
-/* ================= GRID & CARDS ================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 16px;
+/* ================= BIG CARD ================= */
+.big-card {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.card {
+.big-card h3 {
+  font-size: 1.5rem;
+  color: #500a0a;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* ================= SMALL CARDS ================= */
+.small-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 16px;
+}
+
+.small-card {
   background: #fff;
   border-radius: 10px;
   border: 1px solid #eee;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.8);
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   cursor: pointer;
   overflow: hidden;
 }
 
-.card:hover {
+.small-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
   border-color: #ead1a6;
 }
 
 .thumb {
-  height: 150px;
+  height: 250px;
   background: #f2f2f2;
   border-radius: 8px;
   display: flex;
@@ -250,20 +265,48 @@ footer {
 }
 
 /* ================= MEDIA QUERIES ================= */
+@media screen and (max-width: 1024px) {
+
+  .logo-search-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+   .search-box {
+    position: relative;
+    right: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .search-box input {
+    width: 100%;
+    text-align: center;
+  }
+
+}
 
 /* MOBILE */
 @media screen and (max-width: 768px) {
   .logo-search-container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
-  .search-box {
+    .search-box {
     position: relative;
     right: auto;
     margin-top: 10px;
     width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
   }
+
 
   .search-box input {
     width: 100%;
@@ -297,20 +340,51 @@ footer {
     display: block;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
+  .small-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
-  .thumb {
+  /*.thumb {
     height: 120px;
+  }*/
+
+     .footer-links {
+    flex-direction: column; /* column layout */
+    gap: 10px; /* gap થોડું ઓછું */
+    align-items: center; /* center alignment */
   }
+
+  .footer-links a {
+    text-align: center; /* link text center */
+    width: 100%; /* optional: full width link */
+  }
+
 }
 
 /* TABLET */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 14px;
+    .logo-search-container {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+ 
+  .sub-navbar {
+    gap: 20px;
+    font-size: 17px;
+  }
+  
+  
+  .small-cards {
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+}
+
+/* MOBILE & SMALL TABLET FIX (iPad Mini, small tablets) */
+@media screen and (max-width: 1025px) and (min-width: 767px) {
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row like tablet */
+    gap: 15px;
   }
 }
