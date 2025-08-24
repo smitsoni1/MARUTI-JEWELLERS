@@ -283,6 +283,33 @@ footer {
 
 
 /* ========== RESPONSIVE ========== */
+
+@media screen and (max-width: 1024px) {
+  .logo-search-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+   .search-box {
+    position: relative;
+    right: auto;
+    margin-top: 10px;
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .search-box input {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+/* 📱 MOBILE */
+
 @media screen and (max-width: 768px) {
   .logo-search-container {
     flex-direction: column;
@@ -349,15 +376,14 @@ footer {
   }
 }
 
+/* 💻 TABLET */
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
    .logo-search-container {
     justify-content: space-between;
     padding: 0 20px;
   }
-  .search-box {
-    width: 200px;
-    height: 40px;
-  }
+
   .sub-navbar {
     gap: 20px;
     font-size: 17px;
@@ -365,7 +391,7 @@ footer {
   
   .small-cards {
     grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
-    gap: 16px;
+    gap: 20px;
   }
 }
 
@@ -373,5 +399,21 @@ footer {
   .small-cards {
     grid-template-columns: repeat(3, 1fr); /* desktop: 3 columns */
     gap: 16px;
+  }
+}
+
+/* MOBILE & SMALL TABLET FIX (iPad Mini, small tablets) */
+@media screen and (max-width: 1025px) and (min-width: 767px) {
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row like tablet */
+    gap: 15px;
+  }
+}
+
+/* MOBILE & SMALL TABLET FIX (iPad Mini, small tablets) */
+@media screen and (max-width: 721px) and (min-width: 539px) {
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row like tablet */
+    gap: 15px;
   }
 }
