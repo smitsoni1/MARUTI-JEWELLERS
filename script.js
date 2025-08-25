@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   // ==========================
   // GOLD RATE DISPLAY
   const goldEl = document.getElementById("goldRate");
@@ -20,25 +19,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // FOOTER SUBSCRIBE FUNCTIONALITY WITH EMAIL VALIDATION
   const subscribeSection = document.querySelector(".subscribe-section");
   if (subscribeSection) {
-    const subscribeInput = subscribeSection.querySelector("input[type='email']");
+    const subscribeInput = subscribeSection.querySelector(
+      "input[type='email']"
+    );
     const subscribeBtn = subscribeSection.querySelector("button");
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbx8EGWE4hou1hUxcTzAYI_Vh3trMTfkPDuMi2FDFWcx2HVGLPbM_heWNLh_PwIMisecBA/exec";
 
     subscribeBtn.addEventListener("click", () => {
       const email = subscribeInput.value.trim();
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if(email === "") {
+      if (email === "") {
         alert("Please Enter Email !");
         return;
-      } 
-      else if(!emailRegex.test(email)) {
+      } else if (!emailRegex.test(email)) {
         alert("Please Enter A Valid Email!");
         return;
       }
 
-      console.log("Subscribed Email:", email); // Demo: console log
-      alert(`Thank you! ${email} subscribed successfully.`);
-      subscribeInput.value = ""; // Reset input
+      alert(`✅ Thank you! ${email} subscribed successfully.`);
+      subscribeInput.value = "";
+
+      fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email }),
+      }).catch((err) => {
+        console.error("Error saving email:", err);
+      });
     });
   }
 
@@ -74,16 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
-  if(hamburger && navLinks) {
+  if (hamburger && navLinks) {
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("show");
     });
   }
 
   const navAnchors = navLinks.querySelectorAll("a");
-  navAnchors.forEach(link => {
+  navAnchors.forEach((link) => {
     link.addEventListener("click", () => {
-      if(navLinks.classList.contains("show")) {
+      if (navLinks.classList.contains("show")) {
         navLinks.classList.remove("show");
       }
     });
@@ -96,19 +107,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleSearch() {
     const query = searchBox.value.trim().toLowerCase();
-    const allCards = document.querySelectorAll(".card");
+    const allCards = document.querySelectorAll(".small-card"); // ✅ FIXED CLASS
 
-    // If search box empty → show all cards
-    if(query === "") {
-      allCards.forEach(card => card.style.display = "block");
+    if (query === "") {
+      allCards.forEach((card) => (card.style.display = "block"));
       return;
     }
 
-    // FILTER CARDS
     let found = false;
-    allCards.forEach(card => {
-      const title = card.querySelector(".title").textContent.toLowerCase();
-      if(title.includes(query)) {
+    allCards.forEach((card) => {
+      const titleEl = card.querySelector(".title");
+      if (!titleEl) return;
+
+      const title = titleEl.textContent.toLowerCase();
+      if (title.includes(query)) {
         card.style.display = "block";
         found = true;
       } else {
@@ -116,29 +128,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    if(!found) alert(`No products found for: "${query}"`);
+    if (!found) alert(`No products found for: "${query}"`);
   }
 
-  // ENTER KEY PRESS
-  searchBox.addEventListener("keydown", (e) => {
-    if(e.key === "Enter") {
+  if (searchBox) {
+    searchBox.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        handleSearch();
+      }
+    });
+
+    searchBox.addEventListener("input", () => {
+      if (searchBox.value.trim() === "") {
+        const allCards = document.querySelectorAll(".small-card");
+        allCards.forEach((card) => (card.style.display = "block"));
+      }
+    });
+  }
+
+  if (searchBtn) {
+    searchBtn.addEventListener("click", (e) => {
       e.preventDefault();
       handleSearch();
-    }
-  });
-
-  // BUTTON CLICK
-  searchBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    handleSearch();
-  });
-
-  // LIVE CLEAR: જો વપરાશકર્તા input દૂર કરે → બધા cards પાછા
-  searchBox.addEventListener("input", () => {
-    if(searchBox.value.trim() === "") {
-      const allCards = document.querySelectorAll(".card");
-      allCards.forEach(card => card.style.display = "block");
-    }
-  });
-
+    });
+  }
 });
