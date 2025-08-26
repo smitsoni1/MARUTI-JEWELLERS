@@ -68,6 +68,7 @@ body {
   font-size: 18px;
   width: 50px;
   height: 100%;
+  transition: 0.3s;
 }
 
 .search-box button:hover {
@@ -99,11 +100,10 @@ body {
   transition: 0.3s;
 }
 
-.sub-navbar a.active,
-.sub-navbar a:hover {
+.sub-navbar a:hover,
+.sub-navbar a.active {
   color: #ff9800;
 }
-
 .hamburger {
   display: none;
   font-size: 24px;
@@ -132,6 +132,7 @@ body {
 }
 .hero-left p {
   color: #555;
+   font-size: 1.1rem;
 }
 
 /* RATE CARD */
@@ -166,6 +167,7 @@ body {
 }
 .section h2 {
   text-align: center;
+  font-size: 2rem;
   color: #b8860b;
   margin-bottom: 8px;
 }
@@ -173,6 +175,7 @@ body {
   text-align: center;
   color: #666;
   margin-bottom: 18px;
+  font-size: 1.1rem;
 }
 
 /* ==============================
@@ -253,6 +256,7 @@ body {
   font-size: 0.95rem;
   color: #555;
   font-weight: 500;
+ margin-bottom: 10px;
 }
 
 /* ==============================
@@ -342,37 +346,7 @@ footer {
    RESPONSIVE
 ============================== */
 @media screen and (max-width: 1024px) {
-  .big-card {
-    justify-content: center;
-  }
-
-  .logo-search-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-   .search-box {
-    position: relative;
-    right: auto;
-    margin-top: 10px;
-    width: 90%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-  }
-  .search-box input {
-    width: 100%;
-    text-align: center;
-  }
-
-}
-
-/* 📱 MOBILE */
-@media screen and (max-width: 768px) {
-  .logo-search-container {
-    flex-direction: column;
-    align-items: center;
+   .big-card {
     justify-content: center;
   }
 
@@ -385,15 +359,13 @@ footer {
     display: flex;
     justify-content: center;
   }
-
   .search-box input {
     width: 100%;
     text-align: center;
   }
-  .sub-navbar {
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+}
+
+@media screen and (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -406,73 +378,19 @@ footer {
   }
   .nav-links a {
     padding: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255,255,255,0.2);
     text-align: center;
   }
   .hamburger {
     display: block;
   }
-
-  .hero {
+  .footer-links {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    align-items: center;
   }
-  .rate-card {
-    min-width: 100%;
-  }
-
-  .small-cards {
-     grid-template-columns: 1fr; /* એક જ column mobile પર */
-      gap: 15px;
-  }
-
-
-
-   .footer-links {
-    flex-direction: column; /* column layout */
-    gap: 10px; /* gap થોડું ઓછું */
-    align-items: center; /* center alignment */
-  }
-
   .footer-links a {
-    text-align: center; /* link text center */
-    width: 100%; /* optional: full width link */
-  }
-}
-
-/* 💻 TABLET */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .logo-search-container {
-    justify-content: space-between;
-    padding: 0 20px;
-  }
- 
-  .sub-navbar {
-    gap: 20px;
-    font-size: 17px;
-  }
-  
-  .small-cards {
-    grid-template-columns: repeat(2, 1fr); /* tablet: 2 columns */
-    gap: 20px;
-  }
-}
-
-
-@media screen and (max-width: 480px) {
-  .products-grid {
-    justify-content: center;
-  }
-
-  .card {
-    flex: 1 1 90%;
-  }
-}  
-
-/* MOBILE & SMALL TABLET FIX (iPad Mini, small tablets) */
-@media screen and (max-width: 1025px) and (min-width: 767px) {
-  .small-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row like tablet */
-    gap: 15px;
+    text-align: center;
+    width: 100%;
   }
 }

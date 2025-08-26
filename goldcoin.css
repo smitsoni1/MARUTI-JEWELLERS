@@ -17,9 +17,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   position: relative;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -30,7 +30,7 @@ body {
 .shop-logo {
   width: 120px;
   height: auto;
-  margin-top: 50px;
+  margin-top: 30px;
     border-radius: 50%;
 }
 
@@ -48,7 +48,7 @@ body {
   padding: 0 15px;
   border: none;
   outline: none;
-  width: 300px;
+  width: 320px;
   font-size: 16px;
   height: 100%;
 }
@@ -92,8 +92,8 @@ body {
   transition: 0.3s;
 }
 
-.sub-navbar a.active,
-.sub-navbar a:hover {
+.sub-navbar a:hover,
+.sub-navbar a.active {
   color: #ff9800;
 }
 
@@ -108,28 +108,68 @@ body {
 
 /* ================= SECTIONS ================= */
 .section {
-  padding: 40px 18px;
+  padding: 40px 20px;
+  text-align: center;
 }
 .section h2 {
-  text-align: center;
+   font-size: 1.6rem;
   color: #b8860b;
   margin-bottom: 8px;
 }
 .section-sub {
-  text-align: center;
-  color: #555;
-  margin-bottom: 18px;
+  color: #666;
+  margin-bottom: 25px;
 }
+
+
+
+/* ==============================
+   FILTERS
+============================== */
+.filters {
+  display: flex;
+  justify-content: space-between; /* Left-right gap */
+  gap: 20px; /* dropdowns vachche gap */
+  margin: 20px auto; /* top-bottom margin */
+  max-width: 1200px; /* max container width */
+  padding: 0 15px; /* left-right padding */
+}
+.filters select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 2px solid #500a0a;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  min-width: 220px;
+  transition: 0.3s;
+  background-color: #fff;
+   flex: 1; /* each dropdown take equal width */
+  min-width: 0; /* prevent overflow */
+}
+
+.filters select:focus {
+  border-color: #b8860b;
+  box-shadow: 0 0 5px rgba(30, 25, 12, 0.5);
+}
+
 
 /* ================= BIG CARD ================= */
 .big-card {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto 30px;
   background: #fff;
   border-radius: 12px;
-  padding: 20px;
+  padding: 18px;
+    transition: transform 0.25s, box-shadow 0.25s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+.big-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 
 .big-card h3 {
   font-size: 1.5rem;
@@ -142,27 +182,31 @@ body {
 .small-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-  gap: 16px;
+  gap: 20px;
+  width: 100%;
 }
 
 .small-card {
-  background: #fff;
+  background: #fafafa;
   border-radius: 10px;
-  border: 1px solid #eee;
-  padding: 10px;
+  border: 1px solid #ddd;
+  padding: 10px; 
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.8);
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.25s;
   cursor: pointer;
   overflow: hidden;
+    min-height: 220px; /* 🔥 card nu size vadharyu */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* text hamesha niche j rahe */
+
 }
 
 .small-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  border-color: #ead1a6;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-
 .thumb {
   height: 250px;
   background: #f2f2f2;
@@ -185,6 +229,28 @@ body {
   font-weight: 700;
   color: #333;
 }
+
+.card-meta .wt {
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.add-cart {
+  padding: 8px 14px;
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.add-cart:hover {
+  background-color: #e67e22;
+}
+
 
 /* ================= FOOTER ================= */
 .footer-upper {
@@ -267,14 +333,11 @@ footer {
 
 /* ================= MEDIA QUERIES ================= */
 @media screen and (max-width: 1024px) {
-
-  .logo-search-container {
-    flex-direction: column;
-    align-items: center;
+   .big-card {
     justify-content: center;
   }
 
-   .search-box {
+  .search-box {
     position: relative;
     right: auto;
     margin-top: 10px;
@@ -287,38 +350,9 @@ footer {
     width: 100%;
     text-align: center;
   }
-
 }
 
-/* MOBILE */
 @media screen and (max-width: 768px) {
-  .logo-search-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-    .search-box {
-    position: relative;
-    right: auto;
-    margin-top: 10px;
-    width: 90%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-  }
-
-
-  .search-box input {
-    width: 100%;
-    text-align: center;
-  }
-
-  .sub-navbar {
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
   .nav-links {
     display: none;
     flex-direction: column;
@@ -326,66 +360,33 @@ footer {
     margin-top: 10px;
     background-color: #500a0a;
   }
-
   .nav-links.show {
     display: flex;
   }
-
   .nav-links a {
     padding: 12px;
     border-top: 1px solid rgba(255,255,255,0.2);
     text-align: center;
   }
-
   .hamburger {
     display: block;
   }
-
-  .small-cards {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
-
-  /*.thumb {
-    height: 120px;
-  }*/
-
-     .footer-links {
-    flex-direction: column; /* column layout */
-    gap: 10px; /* gap થોડું ઓછું */
-    align-items: center; /* center alignment */
+  .filters select {
+    min-width: 90%;
+    text-align: center;
   }
-
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
   .footer-links a {
-    text-align: center; /* link text center */
-    width: 100%; /* optional: full width link */
-  }
-
-}
-
-/* TABLET */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .logo-search-container {
-    justify-content: space-between;
-    padding: 0 20px;
-  }
- 
-  .sub-navbar {
-    gap: 20px;
-    font-size: 17px;
-  }
-  
-  
-  .small-cards {
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-  }
-}
-
-/* MOBILE & SMALL TABLET FIX (iPad Mini, small tablets) */
-@media screen and (max-width: 1025px) and (min-width: 767px) {
-  .small-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row like tablet */
-    gap: 15px;
+    text-align: center;
+    width: 100%;
   }
 }

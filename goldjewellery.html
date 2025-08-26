@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <!-- 🟢 Cache disable meta tags -->
+  <!-- Cache disable -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
   <title>Gold Jewellery - Maruti Jewellers</title>
-  <link rel="stylesheet" href="goldjewellery.css" />
+  <link rel="stylesheet" href="silverjewellery.css" />
   <link rel="icon" type="image/png" href="images/shop-logo.jpg" />
-  <!-- Font Awesome CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -31,28 +28,27 @@
       </div>
     </div>
 
-    <!-- NAVBAR -->
-    <nav class="sub-navbar">
-      <div class="hamburger"><i class="fas fa-bars"></i></div>
-      <div class="nav-links">
-        <a href="allproducts.html">ALL PRODUCTS</a>
-        <a href="categories.html">CATEGORIES</a>
-        <a href="goldcoin.html">GOLD COIN</a>
-        <a href="goldjewellery.html">GOLD JEWELLERY</a>
-        <a href="silverjewellery.html">SILVER JEWELLERY</a>
-      </div>
-    </nav>
-  </header>
+<!-- NAVBAR -->
+<nav id="navbar" class="sub-navbar">
+  <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  <div class="nav-links" id="navLinks">
+    <a href="allproducts.html">ALL PRODUCTS</a>
+    <a href="categories.html">CATEGORIES</a>
+    <a href="goldcoin.html">GOLD COIN</a>
+    <a href="goldjewellery.html" class="active">GOLD JEWELLERY</a>
+    <a href="silverjewellery.html">SILVER JEWELLERY</a>
+  </div>
+</nav>
 
-  <!-- HERO / PAGE HEADING -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <h1>Gold Jewellery Collection</h1>
-      <p>Elegant 22k & 24k Gold Jewellery</p>
+      <p>Elegant 22K & 24K Gold Jewellery Pieces</p>
     </div>
   </section>
 
-  <!-- FILTER DROPDOWNS -->
+  <!-- FILTERS -->
   <section class="filters">
     <select id="categoryFilter">
       <option value="">Categories</option>
@@ -74,110 +70,56 @@
     </select>
   </section>
 
-  <!-- GOLD JEWELLERY GRID -->
-  <section class="section">
-    <div class="grid">
-      <!-- Example Gold Products -->
-      <div class="card">
-        <div class="thumb">
-          <img src="images/sv soni.jpg" alt="Gold Necklace 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Ghr 1570</div>
-          <div class="wt">Wt : 17.380 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
+  
+  <!-- PRODUCTS (Corrected: id="silver" and small-cards wrapper added) -->
+  <section id="gold" class="section">
+    <h2>Our Gold Jewellery</h2>
+    <p class="section-sub">Gold collection — images and exact weight.</p>
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold2.jpg" alt="Gold Ring 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Gag 2341</div>
-          <div class="wt">Wt : 2.060 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
+    <div class="big-card">
+      <div class="thumb">
+        <!-- WRAPPER required for grid/layout -->
+        <div class="small-cards">
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold3.jpg" alt="Gold Earrings 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">GEG 2120</div>
-          <div class="wt">Wt : 4.480 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
+          <!-- Small Card 1 -->
+          <div class="small-card">
+            <img src="images/sv soni.jpg" alt="Gold Necklace Set">
+            <div class="card-meta">
+              <div class="title">Gold Necklace Set</div>
+              <div class="wt">Wt : 15.50 gram</div>
+              <button class="add-cart">ADD TO CART</button>
+            </div>
+          </div>
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold4.jpg" alt="Gold Bracelet 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Gch 942</div>
-          <div class="wt">Wt : 11.650 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
+          <!-- Small Card 2 -->
+          <div class="small-card">
+            <img src="images/silver-ring.jpg" alt="Gold Ring">
+            <div class="card-meta">
+              <div class="title">Gold Ring</div>
+              <div class="wt">Wt : 3.25 gram</div>
+              <button class="add-cart">ADD TO CART</button>
+            </div>
+          </div>
 
-      
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold4.jpg" alt="Gold Bracelet 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Gch 942</div>
-          <div class="wt">Wt : 11.650 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
+          <!-- Small Card 3 -->
+          <div class="small-card">
+            <img src="images/silver-bracelet.jpg" alt="Gold Bracelet">
+            <div class="card-meta">
+              <div class="title">Gold Bracelet</div>
+              <div class="wt">Wt : 5.75 gram</div>
+              <button class="add-cart">ADD TO CART</button>
+            </div>
+          </div>
 
-      
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold4.jpg" alt="Gold Bracelet 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Gch 942</div>
-          <div class="wt">Wt : 11.650 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold4.jpg" alt="Gold Bracelet 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Gch 942</div>
-          <div class="wt">Wt : 11.650 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="thumb">
-          <img src="images/gold4.jpg" alt="Gold Bracelet 1">
-          <button class="wishlist"><i class="fas fa-heart"></i></button>
-        </div>
-        <div class="card-meta">
-          <div class="title">Gch 942</div>
-          <div class="wt">Wt : 11.650 gram</div>
-          <button class="add-cart">ADD TO CART</button>
-        </div>
-      </div>
-      <!-- Add more gold jewellery cards as needed -->
-    </div>
-  </section>
+          <!-- Add more small-card items as needed -->
+
+        </div> <!-- /.small-cards -->
+      </div> <!-- /.thumb -->
+    </div> <!-- /.big-card -->
+
+  </section> <!-- /#silver -->
+
+
 
   <!-- FOOTER -->
   <section class="footer-upper">
@@ -209,6 +151,6 @@
   <button id="backToTop" title="Top">↑</button>
 
   <!-- SCRIPT -->
-  <script src="goldjewellery.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:'PT Sans', 'Helvetica Neue', Verdana, Arial, sans-serif;
+  font-family: 'PT Sans', 'Helvetica Neue', Verdana, Arial, sans-serif;
 }
 
 body {
@@ -34,8 +34,8 @@ body {
 .shop-logo {
   width: 120px;
   height: auto;
-  margin-top: 50px;
-    border-radius: 50%;
+  margin-top: 30px;
+  border-radius: 50%;
 }
 
 /* SEARCH BOX */
@@ -44,10 +44,9 @@ body {
   right: 50px;
   display: flex;
   border: 2px solid #500a0a;
-  border-radius: 6px;
+  border-radius: 5px;
   overflow: hidden;
   height: 45px;
-  background: #fff;
 }
 
 .search-box input {
@@ -55,6 +54,7 @@ body {
   border: none;
   outline: none;
   width: 300px;
+  height: 100%;
   font-size: 16px;
 }
 
@@ -67,6 +67,7 @@ body {
   justify-content: center;
   font-size: 18px;
   width: 50px;
+  height: 100%;
   transition: 0.3s;
 }
 
@@ -120,6 +121,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   padding: 30px 20px;
   background: linear-gradient(180deg, #fffaf0 0%, #f7f3e8 100%);
   flex-wrap: wrap;
@@ -129,7 +131,6 @@ body {
 .hero-left h1 {
   font-size: 2rem;
   margin-bottom: 6px;
-  color: #b8860b;
 }
 
 .hero-left p {
@@ -138,120 +139,90 @@ body {
 }
 
 /* ==============================
-   CATEGORY SECTION TITLE
+   SECTION TITLE
 ============================== */
+.section {
+  padding: 40px 18px;
+}
+
 .section h2 {
   text-align: center;
   font-size: 2rem;
   color: #b8860b;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .section .section-sub {
   text-align: center;
   font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 30px;
+  color: #666;
+  margin-bottom: 18px;
 }
 
-/* ==============================
-   CATEGORY GRID
-============================== */
-.section {
-  padding: 40px 20px;
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* CATEGORY CARD */
-.category-card {
+/* Big Card acts as container */
+.big-card {
   background: #fff;
-  border-radius: 10px;
-  border: 1px solid #eee;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 0 auto 30px;
+  max-width: 1000px;
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
-.category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+.big-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.category-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: darkslategray;
-  margin-bottom: 15px;
-  text-align: left;
-  text-shadow: 4px 4px 6px rgba(0,0,0,0.6); /* subtle shadow */
-}
-
-/* PRODUCTS GRID INSIDE CATEGORY */
-.products-grid {
-  display: flex;
-  flex-wrap: wrap;
+.small-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: flex-start;
+    width: 100%;
 }
 
-/* CARD */
-.card {
-  flex: 0 0 250px;
-   min-height: 280px; /* card height વધારી */
-  background: #fff;
-  border-radius: 8px;
+/* Individual small cards */
+.small-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  min-height: 220px; /* 🔥 card nu size vadharyu */
   display: flex;
   flex-direction: column;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  justify-content: space-between; /* text hamesha niche j rahe */
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+.small-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-.thumb {
-   width: 100%;
-  height: 250px; /* image height વધારી */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f2f2f2;
-}
-
-.thumb img {
+/* image section */
+.small-card img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
+
+
 .card-meta {
-  padding: 8px 10px; /* padding થોડું ઓછી */
+  padding: 12px;
   background: #fff8e1;
-  flex-grow: 1;
 }
 
 .card-meta .title {
+  font-size: 1rem;
   font-weight: 600;
+    margin-bottom: 6px;
   color: #333;
-  font-size: 1rem;   /* थोड़ा smaller font */
-  margin-bottom: 4px;   /* margin-bottom ઓછી કરી */
-  line-height: 1.2;     /* tight line height */
-  max-height: 2.4em;    /* બે line max, overflow hidden */
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* ==============================
@@ -328,7 +299,7 @@ footer {
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   display: none;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -341,56 +312,27 @@ footer {
 /* ==============================
    RESPONSIVE
 ============================== */
-
 @media screen and (max-width: 1024px) {
-  .logo-search-container {
-    flex-direction: column;
-    align-items: center;
+  .big-card {
     justify-content: center;
-  }
-
-   .search-box {
-    position: relative;
-    right: auto;
-    margin-top: 10px;
-    width: 90%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-  }
-  .search-box input {
-    width: 100%;
-    text-align: center;
-  }
-
-}
-/* Mobile */
-@media screen and (max-width: 768px) {
-  .logo-search-container {
-    flex-direction: column;
-    align-items: center;
-     justify-content: center;
   }
 
   .search-box {
     position: relative;
     right: auto;
-    margin-top: 10px;
+    margin-top: 12px;
     width: 90%;
     height: 40px;
      display: flex;
     justify-content: center;
   }
-
   .search-box input {
     width: 100%;
     text-align: center;
   }
+}
 
-   .sub-navbar {
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+@media screen and (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -405,7 +347,7 @@ footer {
 
   .nav-links a {
     padding: 12px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
   }
 
@@ -413,60 +355,13 @@ footer {
     display: block;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr; /* mobile: 1 card per row */
-    gap: 15px;
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
-
-  
-   .footer-links {
-    flex-direction: column; /* column layout */
-    gap: 10px; /* gap થોડું ઓછું */
-    align-items: center; /* center alignment */
-  }
-
-  .footer-links a {
-    text-align: center; /* link text center */
-    width: 100%; /* optional: full width link */
-  }
-}
-
-/* Tablet */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  
- .logo-search-container {
-    justify-content: space-between;
-    padding: 0 20px;
-  }
- 
-  .sub-navbar {
-    gap: 20px;
-    font-size: 17px;
-  }  
-  
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr); /* tablet: 2 cards per row */
-    gap: 20px;
-  }
-}
-
-/* Small Tablet / iPad Mini */
-@media screen and (max-width: 1025px) and (min-width: 767px) {
-   .products-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    gap: 15px; /* cards વચ્ચે spacing */
-    justify-content: center; /* cards horizontally center align */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .products-grid {
-    justify-content: center; /* cards row માં center align */
-  }
-
-  .card {
-    flex: 0 0 90%; /* card width adjust */
-    margin: 0 auto; /* extra safety center */
+   .footer-links a {
+    text-align: center;
+    width: 100%;
   }
 }
