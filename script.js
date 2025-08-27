@@ -78,23 +78,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ==========================
   // HAMBURGER MENU
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
+ // HAMBURGER + SIDE MENU
+   // HAMBURGER MENU TOGGLE
+  const hamburger = document.getElementById("hamburger");
+const closeMenu = document.getElementById("closeMenu");
+const navLinks = document.getElementById("navLinks");
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-      hamburger.classList.toggle("active");
+if (hamburger && closeMenu && navLinks) {
+  closeMenu.style.display = "none";
+
+  hamburger.addEventListener("click", () => {
+    navLinks.style.left = "0";
+    hamburger.style.display = "none";
+    closeMenu.style.display = "block";
+  });
+
+  closeMenu.addEventListener("click", () => {
+    navLinks.style.left = "-100%";
+    closeMenu.style.display = "none";
+    hamburger.style.display = "block";
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.style.left = "-100%";
+      closeMenu.style.display = "none";
+      hamburger.style.display = "block";
     });
-
-    const navAnchors = navLinks.querySelectorAll("a");
-    navAnchors.forEach((link) =>
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-        hamburger.classList.remove("active");
-      })
-    );
-  }
+  });
+}
 
   // ==========================
   // SEARCH BOX - MAIN + SILVER CARDS

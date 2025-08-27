@@ -5,7 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', 'Helvetica Neue', Verdana, Arial, sans-serif;
+  font-family: "PT Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
 }
 
 body {
@@ -35,44 +35,7 @@ body {
   width: 120px;
   height: auto;
   margin-top: 30px;
-    border-radius: 50%;
-}
-
-/* SEARCH BOX */
-.search-box {
-  position: absolute;
-  right: 50px;
-  display: flex;
-  border: 2px solid #500a0a;
-  border-radius: 5px;
-  overflow: hidden;
-  height: 45px;
-}
-
-.search-box input {
-  padding: 0 15px;
-  border: none;
-  outline: none;
-  width: 300px;
-  font-size: 16px;
-  height: 100%;
-}
-
-.search-box button {
-  border: none;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  width: 50px;
-  height: 100%;
-  transition: 0.3s;
-}
-
-.search-box button:hover {
-  background-color: #e0e0e0;
+  border-radius: 50%;
 }
 
 /* ==============================
@@ -80,37 +43,65 @@ body {
 ============================== */
 .sub-navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #500a0a;
   padding: 10px 20px;
+  background: #500a0a;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 999;
+  z-index: 1000;
 }
 
+/* Nav links (LEFT) */
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
-.sub-navbar a {
-  color: white;
+.nav-links a {
   text-decoration: none;
+  color: #fff;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
-.sub-navbar a:hover,
-.sub-navbar a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: #ff9800;
 }
-.hamburger {
-  display: none;
-  font-size: 24px;
-  color: white;
+
+/* Search box inside navbar (right side) */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.search-box input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.search-box button {
+  background: #fff;
+  color: #222;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
+}
+
+.sub-navbar .search-box button:hover {
+  background-color: #ddd;
+}
+
+/* Hamburger */
+#hamburger,
+#closeMenu {
+  display: none;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1300;
 }
 
 /* ==============================
@@ -132,7 +123,7 @@ body {
 }
 .hero-left p {
   color: #555;
-   font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 /* RATE CARD */
@@ -185,7 +176,7 @@ body {
   background: #fff;
   border-radius: 12px;
   padding: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 0 auto 30px;
   max-width: 1000px;
   transition: transform 0.25s, box-shadow 0.25s;
@@ -193,7 +184,7 @@ body {
 
 .big-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .big-card h2 {
@@ -207,7 +198,10 @@ body {
 ============================== */
 .small-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 🔥 size vadharyu */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* 🔥 size vadharyu */
   gap: 20px;
   width: 100%;
 }
@@ -217,7 +211,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   text-align: center;
   min-height: 220px; /* 🔥 card nu size vadharyu */
@@ -228,7 +222,7 @@ body {
 
 .small-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* image section */
@@ -242,7 +236,7 @@ body {
 /* text/meta section */
 .small-card .card-meta {
   padding: 12px;
-   background: #fff8e1;  
+  background: #fff8e1;
 }
 
 .small-card .title {
@@ -256,7 +250,7 @@ body {
   font-size: 0.95rem;
   color: #555;
   font-weight: 500;
- margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* ==============================
@@ -345,44 +339,91 @@ footer {
 /* ==============================
    RESPONSIVE
 ============================== */
-@media screen and (max-width: 1024px) {
-   .big-card {
+/* ==============================
+   TABLET / LAPTOP
+   981px to 1023px: normal navbar, hamburger hide
+============================== */
+@media screen and (max-width: 1023px) and (min-width: 981px) {
+    .big-card {
     justify-content: center;
+  }
+
+  .nav-links {
+    display: flex;          /* links normal show */
+    flex-direction: row;
+    position: relative;
+    left: 0;
+    height: auto;
+    width: auto;
+    background: transparent;
+    gap: 20px;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  #hamburger,
+  #closeMenu {
+    display: none;          /* hamburger hide */
   }
 
   .search-box {
-    position: relative;
-    right: auto;
-    margin-top: 10px;
-    width: 90%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-  }
-  .search-box input {
-    width: 100%;
-    text-align: center;
+    margin-top: 0;
+    width: auto;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-    background-color: #500a0a;
-  }
-  .nav-links.show {
-    display: flex;
-  }
-  .nav-links a {
-    padding: 12px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    text-align: center;
-  }
-  .hamburger {
+
+@media screen and (max-width: 980px) {
+  /* hamburger show */
+  #hamburger {
     display: block;
+    color: #fff;
+    margin-right: 12px;
+    margin-top: 10px;
+  }
+
+
+  #closeMenu {
+    display: none;
+    font-size: 28px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    cursor: pointer;
+     display: none; 
+  }
+
+  /* nav-links hide by default */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -300px; /* hide side */
+    height: 100%;
+    width: 260px;
+    background: #500a0a;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    gap: 20px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1200;
+  }
+
+  /* active class for open */
+  .nav-links.active {
+    left: 0;
+  }
+
+  .sub-navbar {
+    justify-content: space-between;
+    position: relative; /* 🔥 close icon absolute position lai sake */
+  }
+  /* search box mobile right side */
+  .search-box {
+    flex: 1;
+    margin-left: auto;
+    z-index: 500; /* nav-links karta niche */
   }
   .footer-links {
     flex-direction: column;
