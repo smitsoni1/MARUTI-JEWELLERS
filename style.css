@@ -45,7 +45,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 5px;
   background: #500a0a;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -420,7 +420,6 @@ footer {
   }
   /* search box mobile right side */
   .search-box {
-    flex: 1;
     margin-left: auto;
     z-index: 500; /* nav-links karta niche */
   }
